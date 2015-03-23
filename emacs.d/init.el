@@ -2,11 +2,10 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2015-03-23 18:57:07 spockwang>
+;; Time-stamp: <2015-03-23 19:55:07 spockwang>
 ;;
 
-(unless (server-running-p)
-  (server-start))
+(server-start)
 
 ;; Set load-path variable.
 (add-to-list 'load-path "~/.emacs.d/lisp")
@@ -20,19 +19,12 @@
 
 (iswitchb-mode 1)
 (ido-mode 1)
-(require 'ace-isearch)
-(global-ace-isearch-mode +1)
-(setq ace-isearch-input-length 10)
-      
-(require 'init-theme)
-(require 'init-locale)
-(require 'init-font)
+(require 'init-ace-isearch)
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-fci)
 (require 'init-auto-insert)
 (require 'init-cc-mode)
-(require 'init-desktop)
 (require 'init-jce)
 (require 'init-eshell)
 (require 'init-html)
@@ -46,6 +38,10 @@
 (require 'init-key-bindings)
 (require 'init-yasnippet)
 (require 'init-misc)
+(require 'init-desktop)
+(require 'init-theme)
+(require 'init-locale)
+(require 'init-font)
 
 ;; Load local customizations.
 (require 'init-local nil t)

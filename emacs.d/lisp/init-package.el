@@ -12,7 +12,8 @@
     color-theme-solarized
     markdown-mode
     yasnippet
-    fill-column-indicator)
+    fill-column-indicator
+    ace-isearch)
   "A list of default packages to be installed at launch.")
 
 (defun default-packages-installed-p ()
