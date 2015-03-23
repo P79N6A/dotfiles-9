@@ -35,7 +35,8 @@
 (tool-bar-mode 0)
 
 ;; Hide right scroll bar.
-(scroll-bar-mode 0)
+(if (display-graphic-p)
+    (scroll-bar-mode 0))
 
 ;; Hide the menu bar.
 (menu-bar-mode 0)
