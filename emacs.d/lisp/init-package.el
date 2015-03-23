@@ -11,7 +11,8 @@
     color-theme
     color-theme-solarized
     markdown-mode
-    yasnippet)
+    yasnippet
+    fill-column-indicator)
   "A list of default packages to be installed at launch.")
 
 (defun default-packages-installed-p ()

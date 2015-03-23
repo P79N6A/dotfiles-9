@@ -23,9 +23,6 @@
 ;; Save bookmark automatically.
 (setq bookmark-save-flag 1)
 
-(require 'init-uniquify)
-(require 'init-ibuffer)
-
 ;; Split always vertically.
 (setq split-height-threshold 20)
 (setq split-width-threshold nil)

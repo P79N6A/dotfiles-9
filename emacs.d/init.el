@@ -2,10 +2,11 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2015-03-23 15:40:16 spockwang>
+;; Time-stamp: <2015-03-23 18:57:07 spockwang>
 ;;
 
-(server-start)
+(unless (server-running-p)
+  (server-start))
 
 ;; Set load-path variable.
 (add-to-list 'load-path "~/.emacs.d/lisp")
@@ -26,6 +27,9 @@
 (require 'init-theme)
 (require 'init-locale)
 (require 'init-font)
+(require 'init-uniquify)
+(require 'init-ibuffer)
+(require 'init-fci)
 (require 'init-auto-insert)
 (require 'init-cc-mode)
 (require 'init-desktop)
