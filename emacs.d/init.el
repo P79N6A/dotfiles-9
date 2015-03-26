@@ -2,10 +2,12 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2015-03-23 19:55:07 spockwang>
+;; Time-stamp: <2015-03-26 16:23:50 spockwang>
 ;;
 
-(server-start)
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
 ;; Set load-path variable.
 (add-to-list 'load-path "~/.emacs.d/lisp")
