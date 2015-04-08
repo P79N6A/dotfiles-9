@@ -14,6 +14,8 @@
 ;; Global Key bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(require 'util)
+
 ;; Shift a region left or right.
 (global-set-key (kbd "C-v") 'pager-page-down)
 (global-set-key (kbd "<next>") 'pager-page-down)
@@ -23,14 +25,14 @@
 (global-set-key (kbd "M-<kp-8>") 'pager-row-up)
 (global-set-key (kbd "M-<down>") 'pager-row-down)
 (global-set-key (kbd "M-<kp-2>") 'pager-row-down)
-(global-set-key (kbd "C-<") 'base/shift-left)
-(global-set-key (kbd "C->") 'base/shift-right)
-(global-set-key (kbd "C-x y") 'base/copy-line)
-(global-set-key (kbd "C-x d") 'base/kill-current-word)
+(global-set-key (kbd "C-<") 'util/shift-left)
+(global-set-key (kbd "C->") 'util/shift-right)
+(global-set-key (kbd "C-x y") 'util/copy-line)
+(global-set-key (kbd "C-x d") 'util/kill-current-word)
 
 ;; Cycle through buffer list.  Require "yic-buffer.el".
 (global-set-key "\C-x\C-p" 'bury-buffer)
-(global-set-key "\C-x\C-n" 'yic-next-buffer)
+(global-set-key "\C-x\C-n" 'util/next-buffer)
 
 ;; Set file local variable `coding' to utf-8-unix.
 (global-set-key

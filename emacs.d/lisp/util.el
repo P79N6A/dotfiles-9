@@ -1,11 +1,11 @@
 ;; Copyright 2010. wbb
 ;;     All rights reserved.
 ;;
-;; base.el -- Common functions used in .emacs
+;; util.el -- Common utility functions
 ;;
-;; Time-stamp: <2015-03-23 15:10:48 spockwang>
+;; Time-stamp: <2015-04-08 13:31:41 spockwang>
 
-(defun base/shift-region (distance)
+(defun util/shift-region (distance)
   "Shift the selected region right if distance is postive, left if
 negative"
   (let ((mark (mark)))
@@ -16,17 +16,17 @@ negative"
       ;; for transient mark mode
       (setq deactivate-mark nil))))
 
-(defun base/shift-left ()
+(defun util/shift-left ()
   "Shift the region left by tab-width."
   (interactive)
-  (base/shift-region (- tab-width)))
+  (util/shift-region (- tab-width)))
 
-(defun base/shift-right ()
+(defun util/shift-right ()
   "Shift the region right by tab-width."
   (interactive)
-  (base/shift-region tab-width))
+  (util/shift-region tab-width))
 
-(defun base/copy-line (&optional arg)
+(defun util/copy-line (&optional arg)
   "Copy current line to kill-ring without marking the line."
   (interactive "P")
   (let ((beg (line-beginning-position))
@@ -34,7 +34,7 @@ negative"
     (copy-region-as-kill beg end))
   (message "Copied a line."))
 
-(defun base/emacs-maximize ()
+(defun util/emacs-maximize ()
  "Maximize Emacs."
  (interactive)
  (if (win32-p)                    ; in Windows
@@ -50,35 +50,35 @@ negative"
          '(1 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
      nil)))
 
-(defun base/insert-current-date ()
+(defun util/insert-current-date ()
   "Insert current date at current point."
   (interactive)
   (insert (format-time-string "%Y-%m-%d")))
 
-(defun base/insert-current-time ()
+(defun util/insert-current-time ()
   "Insert current time at current point."
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S")))
 
-(defun base/kill-current-word ()
+(defun util/kill-current-word ()
   "Kill current word."
   (interactive)
   (backward-word)
   (kill-word 1))
 
-(defun yic-next-buffer ()
+(defun util/next-buffer ()
   "Switch to previous buffer in current window."
   (interactive)
   (switch-to-buffer (car (reverse (buffer-list)))))
 
-(defun yic-other-buffer ()
+(defun util/other-buffer ()
   "Switch to the other buffer (2nd in list-buffer) in current window."
   (interactive)
   (switch-to-buffer (other-buffer)))
 
-(defun yic-kill-current-buffer ()
+(defun util/kill-current-buffer ()
   "Kill current buffer."
   (interactive)
   (kill-buffer (current-buffer)))
 
-(provide 'base)
+(provide 'util)

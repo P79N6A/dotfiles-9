@@ -13,14 +13,4 @@
 ;; Override the default setting to use C++-mode for .h files.
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
-;; Define auto insert skeletons for C++ header and source files.
-(add-to-list
- 'auto-insert-alist
- '(("\\.\\([Hh]\\|hh\\|hpp\\)\\'" . "C/C++ header skeleton")
-   . ["template.h" c++-mode my/autoinsert-yas-expand]))
-(add-to-list
- 'auto-insert-alist
- '(("\\.\\(cc\\|cpp\\)\\'" . "C/C++ source skeleton")
-   . ["template.cc" c++-mode my/autoinsert-yas-expand]))
-
 (provide 'init-cc-mode)
