@@ -19,8 +19,6 @@
 (require 'redo)
 (require 'pager)
 (require 'xcscope)
-
-(iswitchb-mode 1)
 (ido-mode 1)
 (require 'init-ace-isearch)
 (require 'init-uniquify)
