@@ -2,7 +2,7 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2015-04-08 13:43:05 spockwang>
+;; Time-stamp: <2015-04-13 14:20:03 spockwang>
 ;;
 
 (require 'server)
@@ -14,15 +14,12 @@
 
 (require 'init-benchmarking)
 (require 'init-preload-local nil t)
-(require 'init-package)                 ; Set up packages.
 (require 'sams-lib)
 (require 'redo)
 (require 'pager)
-(require 'xcscope)
-
-(iswitchb-mode 1)
+(require 'init-package)
 (ido-mode 1)
-(require 'init-ace-isearch)
+;(require 'init-ace-isearch)
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-fci)
@@ -42,9 +39,10 @@
 ;(require 'init-yasnippet)
 (require 'init-misc)
 (require 'init-desktop)
-(require 'init-theme)
 (require 'init-locale)
 (require 'init-font)
+(require 'init-theme)
+(require 'init-auto-complete)
 
 ;; Load local customizations.
 (require 'init-local nil t)

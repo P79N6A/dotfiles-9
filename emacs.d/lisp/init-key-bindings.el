@@ -1,4 +1,4 @@
-(require 'base)
+(require 'util)
 
 ;; Enable 'C-x <' and 'C-x >'
 (put 'scroll-left 'disabled nil)
@@ -13,8 +13,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Global Key bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'util)
 
 ;; Shift a region left or right.
 (global-set-key (kbd "C-v") 'pager-page-down)
@@ -32,7 +30,7 @@
 
 ;; Cycle through buffer list.  Require "yic-buffer.el".
 (global-set-key "\C-x\C-p" 'bury-buffer)
-(global-set-key "\C-x\C-n" 'util/next-buffer)
+(global-set-key "\C-x\C-n" 'yic-next-buffer)
 
 ;; Set file local variable `coding' to utf-8-unix.
 (global-set-key

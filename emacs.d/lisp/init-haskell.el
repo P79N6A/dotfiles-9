@@ -1,4 +1,3 @@
-(require-package 'haskell-mode)
 (autoload
   'haskell-mode
   "haskell-mode"

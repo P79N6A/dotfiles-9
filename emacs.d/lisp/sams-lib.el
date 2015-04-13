@@ -53,7 +53,7 @@
 
 (message "Loading sams-lib...")
 
-(require 'cl)
+(require 'cl-lib)
 
 (eval-when-compile			;use dynamic byte compilation
   (make-local-variable 'byte-compile-dynamic)
@@ -133,17 +133,15 @@
 If USE-CACHE is non-nil, retrieve cached value."
       (let (ret)
 	(cond
-	 ((and use-cache
-	       (get 'win32-cygwin-p 'cache-set))
-	  (get 'win32-cygwin-p 'cache-value))
+	 ((and use-cache (get 'win32-cygwin-p 'cache-set))
+	  (setq ret (get 'win32-cygwin-p 'cache-value)))
 	 (t
 	  (put 'win32-cygwin-p 'cache-set t)
 	  (dolist (path exec-path)
 	    ;; "E:/USR/LOCAL/CYGNUS/B19/H-I386-CYGWIN32/BIN"
 	    (when (string-match "CYGNUS[/\\]\\([^/\\]+\\)[/\\].*cygwin32" path)
 	      (setq ret (match-string 1 path))
-	      (put 'win32-cygwin-p 'cache-value ret)
-	      (return)))))
+	      (put 'win32-cygwin-p 'cache-value ret)))))
 	ret))
 
     ))
@@ -171,7 +169,7 @@ want to define simple key functions
  (global-set-key
    \"\\C-cc\"
    (definteractive (message \"You gave arg: %s\" (prefix-arg-to-text arg))))"
-  ('(function (lambda (&optional arg) (interactive "P") (,@ body)))))
+  `(function (lambda (&optional arg) (interactive "P") (,@body))))
 
 
 ;;; #################################################### &emacs-checks ###
@@ -386,7 +384,7 @@ With \\[universal-argument] OFF, turn this feature off."
     (ad-disable-advice 'define-abbrevs 'after 'sams-save-abbrevs)
     (ad-activate 'define-abbrevs))
    (t
-    (ad-enabel-advice 'define-abbrev  'after 'sams-save-abbrevs)
+    (ad-enable-advice 'define-abbrev  'after 'sams-save-abbrevs)
     (ad-activate 'define-abbrev)
     (ad-enable-advice 'define-abbrevs 'after 'sams-save-abbrevs)
     (ad-activate 'define-abbrevs))))
@@ -459,7 +457,7 @@ saving it and deleting all the lines for ever."
     (progn
       ;; if the buffer is readonly, toggle this, so we can delete the lines
       (if read-only
-          (vc-toggle-read-only))
+          (read-only-mode))
       ;; are there any lines to delete?
       (if (> total 0)
           (if (y-or-n-p (concat "Delete "
@@ -471,7 +469,7 @@ saving it and deleting all the lines for ever."
                     (if (y-or-n-p "Make buffer read-only ")
                         (progn
                           (set-buffer-modified-p nil)
-                          (vc-toggle-read-only)))))
+                          (read-only-mode)))))
             (message "No lines deleted"))
         (message "No match"))
       ;; if the buffer was readonly, set the buffer to "not modified"
@@ -479,7 +477,7 @@ saving it and deleting all the lines for ever."
       (if read-only
           (progn
             (set-buffer-modified-p nil)
-            (vc-toggle-read-only))))))
+            (read-only-mode))))))
 
 
 ;; This function is equivalent to the function above, with the only
@@ -498,7 +496,7 @@ saving it and deleting all the lines for ever."
     (progn
 					; if the buffer is readonly, toggle this, so we can delete the lines
       (if read-only
-          (vc-toggle-read-only))
+          (read-only-mode))
 					; are there any lines to delete?
       (if (> total 0)
           (if (y-or-n-p (concat "Delete "
@@ -510,7 +508,7 @@ saving it and deleting all the lines for ever."
                     (if (y-or-n-p "Make buffer read-only ")
                         (progn
                           (set-buffer-modified-p nil)
-                          (vc-toggle-read-only)))))
+                          (read-only-mode)))))
             (message "No lines deleted"))
         (message "No match"))
 					; if the buffer were readonly, set the buffer to "not modified"
@@ -518,7 +516,7 @@ saving it and deleting all the lines for ever."
       (if read-only
           (progn
             (set-buffer-modified-p nil)
-            (vc-toggle-read-only))))))
+            (read-only-mode))))))
 
 
 (defun sams-make-buffer-copy ()		;[Jesper]
@@ -616,16 +614,6 @@ mail aliases (eventually defined by gnus), using M-tab"
   (add-hook 'message-setup-hook
             (lambda ()
 	      (local-set-key "\M-\t" 'sams-lookup-address-in-gnus ))))
-
-(defun sams-gnus-increase-global-score (&optional score)
-  "Increase the SCORE in the global score file."
-  (interactive "P")
-  (gnus-summary-increase-score score 'a))
-
-(defun sams-gnus-lower-global-score (&optional score)
-  "Decrease the SCORE in the global score file."
-  (interactive "P")
-  (gnus-summary-lower-score score 'a))
 
 (defun sams-define-score-bindings ()
   "Bind C-S-l and C-S-i to functions which lowers

@@ -1,5 +1,5 @@
 ;; Set initial frame size.
-(setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 30)))
+;(setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 30)))
 
 ;; Get a visual, instead of audio, feedback of an exception.
 (setq visible-bell nil)
@@ -11,7 +11,7 @@
 (setq default-directory "~/")
 
 ;; Set default major mode to text-mode.
-(setq default-major-mode 'text-mode)
+(setq major-mode 'text-mode)
 
 ;; Set default fill column.
 (setq-default fill-column 100)
@@ -35,8 +35,7 @@
 (tool-bar-mode 0)
 
 ;; Hide right scroll bar.
-(if (display-graphic-p)
-    (scroll-bar-mode 0))
+(scroll-bar-mode 0)
 
 ;; Hide the menu bar.
 (menu-bar-mode 0)

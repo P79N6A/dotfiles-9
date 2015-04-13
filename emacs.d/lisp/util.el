@@ -3,7 +3,7 @@
 ;;
 ;; util.el -- Common utility functions
 ;;
-;; Time-stamp: <2015-04-08 13:31:41 spockwang>
+;; Time-stamp: <2015-04-13 13:00:37 spockwang>
 
 (defun util/shift-region (distance)
   "Shift the selected region right if distance is postive, left if
@@ -33,22 +33,6 @@ negative"
         (end (line-end-position arg)))
     (copy-region-as-kill beg end))
   (message "Copied a line."))
-
-(defun util/emacs-maximize ()
- "Maximize Emacs."
- (interactive)
- (if (win32-p)                    ; in Windows
-     ;; send maximize message to the window   
-     (w32-send-sys-command #xf030)
-   (if (emacs-p)                        ; in Linux
-       (progn
-        (x-send-client-message
-         nil 0 nil "_NET_WM_STATE" 32    
-         '(1 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-        (x-send-client-message
-         nil 0 nil "_NET_WM_STATE" 32
-         '(1 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
-     nil)))
 
 (defun util/insert-current-date ()
   "Insert current date at current point."
