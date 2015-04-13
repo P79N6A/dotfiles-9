@@ -1,4 +1,4 @@
-(require 'base)
+(require 'util)
 
 ;; Enable 'C-x <' and 'C-x >'
 (put 'scroll-left 'disabled nil)
