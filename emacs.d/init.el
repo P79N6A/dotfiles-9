@@ -18,7 +18,6 @@
 (require 'sams-lib)
 (require 'redo)
 (require 'pager)
-(require 'xcscope)
 (ido-mode 1)
 (require 'init-ace-isearch)
 (require 'init-uniquify)
