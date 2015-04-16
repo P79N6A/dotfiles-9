@@ -1,6 +1,8 @@
 ;; Set initial frame size.
 ;(setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 30)))
 
+(ido-mode t)
+
 ;; Get a visual, instead of audio, feedback of an exception.
 (setq visible-bell nil)
 

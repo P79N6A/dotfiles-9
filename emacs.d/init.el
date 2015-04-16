@@ -2,7 +2,7 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2015-04-13 14:20:03 spockwang>
+;; Time-stamp: <2015-04-15 17:59:13 spockwang>
 ;;
 
 (require 'server)
@@ -12,14 +12,14 @@
 ;; Set load-path variable.
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+(require 'init-package)
 (require 'init-benchmarking)
 (require 'init-preload-local nil t)
+(require 'init-key-bindings)
 (require 'sams-lib)
 (require 'redo)
 (require 'pager)
-(require 'init-package)
-(ido-mode 1)
-;(require 'init-ace-isearch)
+(require 'init-ace-isearch)
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-fci)
@@ -35,14 +35,16 @@
 (require 'init-sh)
 (require 'init-shell)
 (require 'init-sql)
-(require 'init-key-bindings)
-;(require 'init-yasnippet)
+(require 'init-emacs-lisp)
+(require 'init-yasnippet)
 (require 'init-misc)
-(require 'init-desktop)
 (require 'init-locale)
 (require 'init-font)
 (require 'init-theme)
 (require 'init-auto-complete)
+(require 'init-xcscope)
+(require 'init-smex)
+(require 'init-desktop)
 
 ;; Load local customizations.
 (require 'init-local nil t)
