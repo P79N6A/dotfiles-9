@@ -1,9 +1,13 @@
+(require-package 'fill-column-indicator)
+(require 'fill-column-indicator)
+
 (add-hook
  'c-mode-common-hook
  '(lambda ()
     (subword-mode 1)
     (turn-on-auto-fill)
     (c-toggle-auto-newline -1)
+    (fci-mode t)
     (define-key c-mode-base-map [(return)] 'newline-and-indent)
     (define-key c-mode-base-map (kbd "M-q") 'c-fill-paragraph)))
 

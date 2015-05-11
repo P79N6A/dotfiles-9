@@ -1,6 +1,5 @@
+(require-package 'fill-column-indicator)
 (require 'fill-column-indicator)
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-(global-fci-mode 1)
 
 ;; `popup.el` is not compatible with `fci-mode`, so disable fci-mode temporarily when a popup menu
 ;; is in effect.

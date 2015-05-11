@@ -2,7 +2,7 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2015-04-15 17:59:13 spockwang>
+;; Time-stamp: <2015-05-05 17:10:55 spockwang>
 ;;
 
 (require 'server)
@@ -44,6 +44,7 @@
 (require 'init-auto-complete)
 (require 'init-xcscope)
 (require 'init-smex)
+(require 'init-web-mode)
 (require 'init-desktop)
 
 ;; Load local customizations.
