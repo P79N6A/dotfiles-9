@@ -3,7 +3,7 @@
 ;;
 ;; util.el -- Common utility functions
 ;;
-;; Time-stamp: <2015-04-13 13:00:37 spockwang>
+;; Time-stamp: <2015-07-01 13:23:36 spockwang>
 
 (defun util/shift-region (distance)
   "Shift the selected region right if distance is postive, left if
@@ -64,5 +64,24 @@ negative"
   "Kill current buffer."
   (interactive)
   (kill-buffer (current-buffer)))
+
+(defun util/copy-current-file-name ()
+  "Copy current filename to kill-ring."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (if filename
+        (progn (kill-new filename)
+               (message "Copied filename '%s'." filename))
+      (message "No filename associated with current buffer."))))
+
+(defun util/copy-current-directory ()
+  "Copy current directory to kill-ring."
+  (interactive)
+  (if default-directory
+      (progn (kill-new default-directory)
+             (message "Copied directory '%s'." default-directory))
+    (message "No directory associated with current buffer.")))
 
 (provide 'util)

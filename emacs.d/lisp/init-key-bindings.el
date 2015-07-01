@@ -26,7 +26,6 @@
 (global-set-key (kbd "C-<") 'util/shift-left)
 (global-set-key (kbd "C->") 'util/shift-right)
 (global-set-key (kbd "C-x y") 'util/copy-line)
-(global-set-key (kbd "C-x d") 'util/kill-current-word)
 
 ;; Cycle through buffer list.  Require "yic-buffer.el".
 (global-set-key "\C-x\C-p" 'bury-buffer)
@@ -59,6 +58,8 @@
 
 (global-set-key (kbd "C-x M-d") 'insert-current-date)
 (global-set-key (kbd "C-x M-t") 'insert-current-time)
+(global-set-key (kbd "C-x M-w f") 'util/copy-current-file-name)
+(global-set-key (kbd "C-x M-w d") 'util/copy-current-directory)
 
 ;; Bind function keys
 (define-key global-map (kbd "<f2>") 'set-mark-command)
