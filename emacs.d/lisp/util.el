@@ -3,7 +3,7 @@
 ;;
 ;; util.el -- Common utility functions
 ;;
-;; Time-stamp: <2015-07-01 13:23:36 spockwang>
+;; Time-stamp: <2015-08-04 10:56:22 Administrator>
 
 (defun util/shift-region (distance)
   "Shift the selected region right if distance is postive, left if
@@ -65,8 +65,19 @@ negative"
   (interactive)
   (kill-buffer (current-buffer)))
 
+(defun util/copy-current-path ()
+  "Copy current file path to kill-ring."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (file-name-nondirectory (buffer-file-name)))))
+    (if filename
+        (progn (kill-new filename)
+               (message "Copied path '%s'." filename))
+      (message "No path associated with current buffer."))))
+
 (defun util/copy-current-file-name ()
-  "Copy current filename to kill-ring."
+  "Copy current filename."
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)
                       default-directory
@@ -83,5 +94,10 @@ negative"
       (progn (kill-new default-directory)
              (message "Copied directory '%s'." default-directory))
     (message "No directory associated with current buffer.")))
+
+(defun util/search-all-buffers (regexp)
+  "Search all lines matching REGEXP in all open buffers."
+  (interactive (list (read-regexp "List lines matching regexp: ")))
+  (multi-occur-in-matching-buffers ".*" regexp t))
 
 (provide 'util)

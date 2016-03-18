@@ -59,6 +59,7 @@
 (global-set-key (kbd "C-x M-d") 'insert-current-date)
 (global-set-key (kbd "C-x M-t") 'insert-current-time)
 (global-set-key (kbd "C-x M-w f") 'util/copy-current-file-name)
+(global-set-key (kbd "C-x M-w p") 'util/copy-current-path)
 (global-set-key (kbd "C-x M-w d") 'util/copy-current-directory)
 
 ;; Bind function keys
@@ -66,8 +67,8 @@
 (define-key global-map (kbd "<f3>") 'revert-buffer)
 (define-key global-map (kbd "<f5>") 'undo)
 (define-key global-map (kbd "S-<f5>") 'redo)
-(define-key global-map (kbd "<f6>") 'sams-cm-rotate)
-(define-key global-map (kbd "S-<f6>") 'sams-cm-save-point)
+(define-key global-map (kbd "<f6>") 'pop-global-mark)
+;(define-key global-map (kbd "S-<f6>") 'sams-cm-save-point)
 (define-key global-map (kbd "<f7>") 'ispell)
 (define-key global-map (kbd "<f8>") 'dired)
 (define-key global-map (kbd "<f9>") 'goto-line)
