@@ -2,7 +2,7 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2015-05-05 17:10:55 spockwang>
+;; Time-stamp: <2016-03-18 09:55:21 Administrator>
 ;;
 
 (require 'server)
@@ -15,11 +15,10 @@
 (require 'init-package)
 (require 'init-benchmarking)
 (require 'init-preload-local nil t)
+(require 'init-misc)
 (require 'init-key-bindings)
-(require 'sams-lib)
-(require 'redo)
-(require 'pager)
-(require 'init-ace-isearch)
+;(require 'sams-lib)
+;(require 'init-ace-isearch)
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-fci)
@@ -36,15 +35,17 @@
 (require 'init-shell)
 (require 'init-sql)
 (require 'init-emacs-lisp)
+(require 'init-javascript)
 (require 'init-yasnippet)
-(require 'init-misc)
 (require 'init-locale)
 (require 'init-font)
 (require 'init-theme)
-(require 'init-auto-complete)
+;(require 'init-auto-complete)
 (require 'init-xcscope)
 (require 'init-smex)
 (require 'init-web-mode)
+(require 'init-auto-mark)
+(require 'init-ace-window)
 (require 'init-desktop)
 
 ;; Load local customizations.
