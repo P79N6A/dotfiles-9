@@ -1,4 +1,5 @@
 (require 'util)
+(require 'pager)
 
 ;; Enable 'C-x <' and 'C-x >'
 (put 'scroll-left 'disabled nil)
