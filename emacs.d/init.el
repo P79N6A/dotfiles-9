@@ -2,7 +2,7 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2016-03-18 09:55:21 Administrator>
+;; Time-stamp: <2016-03-21 13:24:48 Administrator>
 ;;
 
 (require 'server)
@@ -17,8 +17,6 @@
 (require 'init-preload-local nil t)
 (require 'init-misc)
 (require 'init-key-bindings)
-;(require 'sams-lib)
-;(require 'init-ace-isearch)
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-fci)
@@ -40,7 +38,6 @@
 (require 'init-locale)
 (require 'init-font)
 (require 'init-theme)
-;(require 'init-auto-complete)
 (require 'init-xcscope)
 (require 'init-smex)
 (require 'init-web-mode)
