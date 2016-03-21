@@ -2,6 +2,7 @@
 (auto-insert-mode)
 (custom-set-variables '(auto-insert-directory "~/.emacs.d/auto-insert/"))
 
+(require-package 'yasnippet)
 (require 'yasnippet)
 (defun autoinsert-yas-expand()
   "Replace text in yasnippet template."

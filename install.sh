@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# Install scripts for Linux.
 
 for name in *; do
     # Skip '*~' files.
