@@ -3,8 +3,6 @@
   excludesfile = ~/.gitignore
 [color]
   ui = auto
-[credential]
-  helper = cache --timeout=3600
 [alias]
   st = status
   co = checkout
@@ -14,6 +12,3 @@
   default = tracking
 [include]
   path = .gitconfig.local
-[user]
-  email = wbbtiger@gmail.com
-  name = spockwangs
