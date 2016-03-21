@@ -2,6 +2,7 @@
 ;(setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 30)))
 
 (ido-mode t)
+(setq-default ido-create-new-buffer 'always)
 
 ;; Get a visual, instead of audio, feedback of an exception.
 (setq visible-bell nil)
@@ -17,7 +18,9 @@
 
 ;; Set default fill column.
 (setq-default fill-column 100)
-(turn-on-auto-fill)
+(add-hook
+ 'fundamental-mode-hook
+ '(lambda () (turn-on-auto-fill)))
 
 ;; Update time stamp string in the buffer before saving.
 (add-hook 'before-save-hook 'time-stamp)

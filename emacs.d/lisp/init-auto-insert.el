@@ -17,4 +17,9 @@
  '(("\\.\\(cc\\|cpp\\)\\'" . "C/C++ source skeleton")
    . ["template.cc" c++-mode autoinsert-yas-expand]))
 
+(add-to-list
+ 'auto-insert-alist
+ '(("\\.js\\'" . "Javascript skeleton")
+   . ["template.js" js-mode autoinsert-yas-expand]))
+
 (provide 'init-auto-insert)

@@ -58,7 +58,11 @@
   :prefix "auto-mark-")
 
 (defcustom auto-mark-command-class-alist
-  '((goto-line . jump))
+  '((goto-line . jump)
+    (pager-page-down . jump)
+    (pager-page-up . jump)
+    (end-of-buffer . jump)
+    (beginning-of-buffer . jump))
   "A list of (COMMAND . CLASS) for classfying command to CLASS.
 
 COMMAND is a symbol you want to try to classify.
@@ -122,8 +126,9 @@ and returns CLASS."
 
 (defun auto-mark-handle-command-class (class)
   (if (and class
-           (not (or (eq class 'ignore)
-                    (eq class auto-mark-command-class))))
+           (or (not (or (eq class 'ignore)
+                        (eq class auto-mark-command-class)))
+               (eq class 'jump)))
       (progn
         (push-mark auto-mark-previous-point t nil)
         (setq auto-mark-command-class class))))

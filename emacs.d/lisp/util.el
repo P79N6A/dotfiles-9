@@ -2,8 +2,6 @@
 ;;     All rights reserved.
 ;;
 ;; util.el -- Common utility functions
-;;
-;; Time-stamp: <2015-08-04 10:56:22 Administrator>
 
 (defun util/shift-region (distance)
   "Shift the selected region right if distance is postive, left if
@@ -99,5 +97,12 @@ negative"
   "Search all lines matching REGEXP in all open buffers."
   (interactive (list (read-regexp "List lines matching regexp: ")))
   (multi-occur-in-matching-buffers ".*" regexp t))
+
+(defun util/fill ()
+  "If area is selected call 'fill-region' otherwise call 'fill-paragraph'."
+  (interactive)
+  (if (region-active-p)
+      (fill-region (region-beginning) (region-end))
+    (fill-paragraph nil)))
 
 (provide 'util)

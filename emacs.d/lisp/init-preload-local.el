@@ -24,7 +24,5 @@
 
 ;;; Code:
 
-(setq url-proxy-services '(("http" . "proxy.tencent.com:8080")))
-
 (provide 'init-preload-local)
 ;;; init-preload-local.el ends here
