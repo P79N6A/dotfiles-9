@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-## Install
+## Installation
 
 Clone to local machine.
 
@@ -17,7 +17,7 @@ and for Windows
     $ cd dotfiles
     $ ./install.bat
 
-## Make local customizations
+## Local customizations
 
 Put your customizations in dotfiles appended with `.local`:
 
