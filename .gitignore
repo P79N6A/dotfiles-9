@@ -4,3 +4,4 @@ emacs.d/ido.last
 emacs.d/lisp/init-preload-local.el
 emacs.d/server/
 emacs.d/smex-items
+emacs.d/.emacs.desktop*
