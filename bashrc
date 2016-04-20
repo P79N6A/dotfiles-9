@@ -1,4 +1,4 @@
-# -*- mode: shell-script-mode; -*-
+# -*- mode: shell-script; -*-
 # ~/.bashrc 
 # Read by interactive non-login bash.
 
