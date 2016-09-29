@@ -1,4 +1,4 @@
-# -*- mode: shell-script-mode; -*-
+# -*- mode: shell-script; -*-
 # ~/.bashrc 
 # Read by interactive non-login bash.
 
@@ -39,6 +39,8 @@ alias cp='cp -i -v'
 alias mv='mv -i -v'
 if [ $TERM = dumb ]; then
     alias ls='ls --classify'
+elif [ $(uname) = Darwin ]; then
+    alias ls='ls -G -F'
 else
     alias ls='ls --color=always --classify'
 fi
