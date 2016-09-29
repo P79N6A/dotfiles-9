@@ -23,4 +23,9 @@
  '(("\\.js\\'" . "Javascript skeleton")
    . ["template.js" js-mode autoinsert-yas-expand]))
 
+(add-to-list
+ 'auto-insert-alist
+ '(("\\.scala\\'" . "Scala skeleton")
+   . ["template.scala" scala-mode autoinsert-yas-expand]))
+
 (provide 'init-auto-insert)
