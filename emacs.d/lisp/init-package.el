@@ -1,8 +1,8 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/"))
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/#/"))
+             '("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))
 (package-initialize)
 
 (defun require-package (package &optional min-version no-refresh)

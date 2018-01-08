@@ -2,7 +2,7 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2016-09-28 11:25:47 Administrator>
+;; Time-stamp: <2018-01-08 11:28:31 Administrator>
 ;;
 
 (require 'server)
@@ -43,7 +43,6 @@
 (require 'init-web-mode)
 (require 'init-auto-mark)
 (require 'init-ace-window)
-(require 'init-scala-mode)
 (require 'init-make-mode)
 (require 'init-desktop)
 
