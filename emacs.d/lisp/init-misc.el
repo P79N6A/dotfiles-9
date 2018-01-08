@@ -42,6 +42,9 @@
 ;; Hide right scroll bar.
 (scroll-bar-mode 0)
 
+;; Hide horizontal scroll bar.
+(horizontal-scroll-bar-mode 0)
+
 ;; Hide the menu bar.
 (menu-bar-mode 0)
 
