@@ -28,7 +28,7 @@ elif [ $TERM = dumb -o $TERM = emacs ]; then
     export PS1="\u@\h:\W[$?]\$ "
 else
     # The terminator emulator
-    export PS1='\[\e]0;\u@\h:\w\007\]\[\e[32m\]\u:\w[$?]\$\[\e[0m\] '
+    export PS1='\[\e]0;\u@\h:\w\007\]\[\e[32m\]\u:\w[$?]\n\$\[\e[0m\] '
 fi
 
 export LANG=en_US.UTF-8
