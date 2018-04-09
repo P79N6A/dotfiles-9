@@ -68,7 +68,7 @@ negative"
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)
                       default-directory
-                    (file-name-nondirectory (buffer-file-name)))))
+                    (buffer-file-name))))
     (if filename
         (progn (kill-new filename)
                (message "Copied path '%s'." filename))
@@ -79,7 +79,7 @@ negative"
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)
                       default-directory
-                    (buffer-file-name))))
+                    (file-name-nondirectory (buffer-file-name)))))
     (if filename
         (progn (kill-new filename)
                (message "Copied filename '%s'." filename))

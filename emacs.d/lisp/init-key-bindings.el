@@ -60,6 +60,7 @@
 (global-set-key (kbd "C-x M-t") 'insert-current-time)
 (global-set-key (kbd "C-x M-w f") 'util/copy-current-file-name)
 (global-set-key (kbd "C-x M-w d") 'util/copy-current-directory)
+(global-set-key (kbd "C-x M-w p") 'util/copy-current-path)
 
 ;; Bind function keys
 (define-key global-map (kbd "<f2>") 'set-mark-command)
