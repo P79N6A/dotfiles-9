@@ -2,7 +2,7 @@
 ;; Copyright (c) 2010-2015 wbb
 ;;     All rights reserved.
 ;;
-;; Time-stamp: <2018-01-08 11:28:31 Administrator>
+;; Time-stamp: <2018-04-10 00:09:48 spockwang>
 ;;
 
 (require 'server)
@@ -44,6 +44,7 @@
 (require 'init-auto-mark)
 (require 'init-ace-window)
 (require 'init-make-mode)
+(require 'init-protobuf-mode)
 (require 'init-desktop)
 
 ;; Load local customizations.
