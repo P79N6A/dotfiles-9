@@ -8,13 +8,21 @@ for name in *; do
         continue
     fi
     if [ "$name" == "bin" ]; then
-        target="${HOME}/${name}"
+        target="${HOME}"
     else
         target="${HOME}/.${name}"
     fi
     extension="${name##*.}"
     if [ "$extension" != "md" -a "$extension" != "sh" ]; then
-        echo "Creating \`$target'"
-        cp -r "$name" "$target"
+        echo "Copying \`$name' to \`$target'"
+        if [ -d "$name" ]; then
+            if [ -d "$target" ]; then
+                cp -r "$name"/* "$target"
+            else
+                cp -r "$name" "$target"
+            fi
+        else
+            cp "$name" "$target"
+        fi
     fi
 done
