@@ -1,8 +1,6 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))
+(setq package-archives '(("gnu" . "http://elpa.emacs-china.org/gnu/")
+			 ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 (package-initialize)
 
 (defun require-package (package &optional min-version no-refresh)
