@@ -1,5 +1,4 @@
-(require-package 'python-mode)
-(require 'python-mode)
+(require 'python)
 
 (add-hook
   'python-mode-hook
