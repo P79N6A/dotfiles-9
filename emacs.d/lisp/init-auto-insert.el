@@ -28,4 +28,9 @@
  '(("\\.scala\\'" . "Scala skeleton")
    . ["template.scala" scala-mode autoinsert-yas-expand]))
 
+(add-to-list
+ 'auto-insert-alist
+ '(("\\.py\\'" . "Python skeleton")
+   . ["template.py" python-mode autoinsert-yas-expand]))
+
 (provide 'init-auto-insert)
