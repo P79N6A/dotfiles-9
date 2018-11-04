@@ -1,3 +1,5 @@
+; Requires: cscope
+
 (require-package 'xcscope)
 (require 'xcscope)
 (cscope-setup)
