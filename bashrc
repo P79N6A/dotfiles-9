@@ -51,6 +51,8 @@ alias matlab='matlab -nosplash'
 alias bindkey='bind'
 alias ansic='cc -W -Wall -ansi -pedantic'
 alias c99='gcc -W -Wall -std=c99 -pedantic'
+# Use the right emacsclient binary on MacOS.
+alias emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 
 # allow core dump
 ulimit -c unlimited
