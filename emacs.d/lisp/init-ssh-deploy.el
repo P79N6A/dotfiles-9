@@ -1,0 +1,6 @@
+(require-package 'ssh-deploy)
+(require 'ssh-deploy)
+(ssh-deploy-add-menu)
+(ssh-deploy-line-mode)
+(global-set-key (kbd "C-c C-z") 'ssh-deploy-prefix-map)
+(provide 'init-ssh-deploy)
